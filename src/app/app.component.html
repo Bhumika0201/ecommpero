@@ -1,0 +1,37 @@
+<div class="container">
+
+    <app-navbar></app-navbar>
+
+    <form class="form-inline  ">
+      <input class="form-control  " type="search"  placeholder=
+      "Search" #searchTerm (keyup.enter)="searchValue(searchTerm.value)"
+        >
+    </form>
+    <div class="ng-autocomplete" style="width: 100%;" >
+        <ng-autocomplete
+          [data]="data"
+          [searchKeyword]="keyword"
+          (selected)="changeEventAutocomplete($event)"
+          placeHolder="Search"
+
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate">
+        </ng-autocomplete>
+
+        <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item"></a>
+        </ng-template>
+
+        <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+        </ng-template>
+        </div>
+
+
+    <main>
+      <router-outlet #o="outlet"></router-outlet>
+    </main>
+
+    <!-- <app-footer></app-footer> -->
+
+  </div>

@@ -1,0 +1,109 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light   " class="stroke"[containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" href="#" style="color: black;" style="width:200px"><img src="assets/pics/output-onlinepngtools.png" width="100%"></a></mdb-navbar-brand>
+
+    <!-- Collapsible content -->
+    <links >
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="[ '/products/all-products' ]" style="color: rgb(255, 99, 42);" ><b>Books</b></a>
+        </li>
+        <li class="mega-drop-down" style="z-index: 4;"><a class="nav-link waves" style="color: rgb(255, 99, 42);"><i class="fa fa-list"></i> <b>Categories</b></a>
+          <div class="animated fadeIn mega-menu">
+            <div class="mega-menu-wrap ">
+              <div class="row">
+
+                <div class="col-md-5">
+                    <h4 class="row mega-title">Books</h4>
+                  <ul class="stander">
+
+                    <li><a [routerLink]="['/products/searchResults','Best Sellers']">Best Sellers</a></li>
+                    <li><a [routerLink]="['/products/ctgProd','Text Books']">Text Books</a></li>
+                    <li><a [routerLink]="['/products/ctgProd','Award winners']">Award Winners</a></li>
+                    <li><a [routerLink]="['/products/ctgProd','New Arrivals']">New Arrivals</a></li>
+
+
+                  </ul>
+                </div>
+                <div class="col-md-5">
+                  <h4 class="row mega-title">Description</h4>
+                  <ul class="description">
+                    <li><a  [routerLink]="['/products/ctgProd','Lifestyle']"><b>Lifestyle</b></a>
+                      <span>Language,Places & People etc. </span>
+                    </li>
+                    <li><a  [routerLink]="['/products/ctgProd','Biographies']"><b>Biographies</b></a>
+                        <span>Diaries,Letters,True Stories etc.</span>
+                    </li>
+                    <li><a [routerLink]="['/products/ctgProd','Law']">Law</a>
+                        <span>Jurisprudence,general issues etc</span>
+                    </li>
+                    <li><a [routerLink]="['/products/ctgProd','Literature']">Literature</a>
+                        <span>Anthologies ,Poetry etc.</span>
+                    </li>
+
+                  </ul>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+
+        <li class="nav-item" *ngIf="authService.isAdmin()"  >
+          <a class="nav-link" [routerLink]="[ '/products/add-product' ]" >
+           ADMIN PANEL</a>
+        </li>
+
+
+
+
+        <!-- Dropdown -->
+
+
+      </ul>
+      <!-- Links -->
+
+
+
+      <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+              <div>
+                <a class="nav-link" href="javascript:;;" [routerLink]="['/products/cart-items']">
+                  <i class="fa fa-shopping-cart">
+                    <span class="mt-2">  {{productService.navbarCartCount}}</span>
+                  </i>
+                </a>
+              </div>
+            </li>
+
+
+        <li class="nav-item icon-effect-1">
+          <a class="nav-link icon">
+            <div class="btn-group" mdbDropdown>
+              <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+              <p *ngIf="userName!=null ">Hello,{{userName}} !</p>
+              <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                <a class="dropdown-item" *ngIf="!authService.isLoggedIn()"  [routerLink]="[ '/login' ]" >Login</a>
+
+                <a class="dropdown-item" *ngIf="authService.isLoggedIn()"  (click)="logout()">Logout</a>
+                <a class="dropdown-item" *ngIf="authService.isLoggedIn()"  href="#">My Account</a>
+
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </links>
+    <!-- Collapsible content -->
+
+  </mdb-navbar>
+  <!--/.Navbar-->
+

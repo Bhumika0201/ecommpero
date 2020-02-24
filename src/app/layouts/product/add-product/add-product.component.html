@@ -1,0 +1,444 @@
+<br />
+<br />
+<div class="row">
+  <div class="setItem">
+    <div class="container" style="background-color:  #f3f3f3">
+      <br>
+    <p> <a>ADD PRODUCTS</a></p>
+    <hr>
+    <p><a>RECEIVED ORDERS</a></p>
+    <hr>
+  </div>
+
+  </div>
+  <div class="setItem2">
+    <div *ngIf="ShowDetailForm">
+      <div class="col-md-8 ">
+        <!--        <form #addProductForm="ngForm" (ngSubmit)="AddProduct(addProductForm)">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="productName">Product Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productName"
+                name="productName"
+                [(ngModel)]="product.productName"
+                placeholder="Product Name"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="productCategory">Product Category</label>
+              <select
+                class="form-control"
+                id="productCategory"
+                name="productCategory"
+                [(ngModel)]="product.productCategory"
+                placeholder="Product Category"
+              >
+                <ng-container *ngFor="let category of categories">
+                  <option
+                    [value]="category.categoryname"
+                    *ngIf="category.categoryparent === ''"
+                  >
+                    {{ category.categoryname }}
+                  </option>
+                </ng-container>
+              </select>
+              <button
+                type="button"
+                class="btn btn-info btn-circle"
+                (click)="AddCategory.show()"
+                mdbWavesEffect
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="productCategory">Product Subcategory</label>
+              <select
+                class="form-control"
+                id="productSubCategory"
+                name="productSubCategory"
+                placeholder="Product Sub Category"
+                [(ngModel)]="product.productSubCategory"
+              >
+                <ng-container *ngFor="let category of categories">
+                  <option *ngIf="category.categoryparent === product.productCategory">
+                    {{ category.categoryname }}
+                  </option>
+                </ng-container>
+              </select>
+              <button
+                *ngIf="product.productCategory"
+                type="button"
+                class="btn btn-info btn-circle"
+                (click)="AddSubCategory.show(product.productCategory)"
+                mdbWavesEffect
+              >
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="productDescription"
+                >Product Description
+                <span class="text-muted">(Optional)</span>
+              </label>
+              <textarea
+                type="text"
+                class="form-control"
+                id="productDescription"
+                placeholder="Product Description"
+                name="productDescription"
+                [(ngModel)]="product.productDescription"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="productPrice">Product Price</label>
+              <input
+                type="number"
+                name="productPrice"
+                class="form-control"
+                [(ngModel)]="product.productPrice"
+                placeholder="Product Price"
+                id="productPrice"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="productQuatity">Product Quantity</label>
+              <input
+                type="number"
+                class="form-control"
+                id="productQuatity"
+                name="productQuatity"
+                [(ngModel)]="product.productQuatity"
+                placeholder="Product Quantity"
+                value=""
+                required
+              />
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="productSeller">Product Seller</label>
+            <input
+              type="text"
+              class="form-control"
+              id="productSeller"
+              [(ngModel)]="product.productSeller"
+              name="productSeller"
+              placeholder="Product Seller"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="hsnCode"> HSN CODE</label>
+            <input
+              type="text"
+              class="form-control"
+              id="hsncode"
+              name="hsncode"
+              [(ngModel)]="product.hsncode"
+
+              placeholder="Product HSN code"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label>CGST</label>
+            <select class="form-control" name="cgst" placeholder="Product CGST" [(ngModel)]="product.cgst">
+              <ng-container *ngFor="let taxRate of taxconversion">
+                <option
+                  *ngIf="taxRate.HSN == product.hsncode && product.hsncode != ''"
+                >
+                  {{ taxRate.CGST }}
+                </option>
+              </ng-container>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label>SGST</label>
+            <select class="form-control"  name="sgst" placeholder="Product SGST" [(ngModel)]="product.sgst">
+              <ng-container *ngFor="let taxRate of taxconversion">
+                <option
+                  *ngIf="product.hsncode !== '' && taxRate.HSN == product.hsncode"
+                >
+                  {{ taxRate.SGST }}
+                </option>
+              </ng-container>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label>IGST</label>
+            <select class="form-control"  name="igst" placeholder="Product IGST" [(ngModel)]="product.igst">
+              <ng-container *ngFor="let taxRate of taxconversion">
+                <option
+                  *ngIf="taxRate.HSN == product.hsncode && product.hsncode != ''"
+                >
+                  {{ taxRate.IGST }}
+                </option>
+              </ng-container>
+            </select>
+          </div>
+
+
+          <button  (click)="uploader.uploadAll()" class="btn btn-primary btn-lg btn-block" type="submit">
+            Add Product Details
+          </button>
+        </form>-->
+
+      </div>
+      </div>
+
+     <div *ngIf="ShowImageupload">
+          <div class="mb-3" >
+            <label for="productImageUrl">Product Image</label>
+            <br />
+ <!--   <input
+              type="file"
+              enctype="multipart/form-data"
+              multiple
+              ng2FileSelect
+              [uploader]="uploader"
+            />-->
+
+            <br />
+          </div>
+          <div class="col-md-12">
+
+            Queue length: {{ uploader?.queue?.length }}
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th width="50%">Name</th>
+                  <th>Size</th>
+                  <th>Progress</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of uploader.queue; let i = index">
+                  <td>
+                    <img
+                      [src]="sanitizer.bypassSecurityTrustUrl(ImageUrls[i])"
+                      class="rounded mb-3"
+                      height="150"
+                      width="150"
+                      style="padding: 2%"
+                    />
+                  </td>
+                  <td nowrap>{{ item.file.size / 1024 / 1024 | number: ".2" }} MB</td>
+                  <td>
+                    <div class="progress" style="margin-bottom: 0;">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        [ngStyle]="{ width: item.progress + '%' }"
+                      ></div>
+                    </div>
+                  </td>
+                  <td class="text-center">
+                    <span *ngIf="item.isSuccess"
+                      ><i class="glyphicon glyphicon-ok"></i
+                    ></span>
+                    <span *ngIf="item.isCancel"
+                      ><i class="glyphicon glyphicon-ban-circle"></i
+                    ></span>
+                    <span *ngIf="item.isError"
+                      ><i class="glyphicon glyphicon-remove"></i
+                    ></span>
+                  </td>
+                  <td nowrap>
+                    <button
+                      type="button"
+                      class="btn btn-success btn-xs"
+                      (click)="item.upload()"
+                      [disabled]="item.isReady || item.isUploading || item.isSuccess"
+                    >
+                      <span class="glyphicon glyphicon-upload"></span> Upload
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-warning btn-xs"
+                      (click)="item.cancel()"
+                      [disabled]="!item.isUploading"
+                    >
+                      <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-xs"
+                      (click)="item.remove()"
+                    >
+                      <span class="glyphicon glyphicon-trash"></span> Remove
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div>
+              <div>
+                Queue progress:
+                <div class="progress" style="">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    [ngStyle]="{ width: uploader.progress + '%' }"
+                  ></div>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-success btn-s"
+                (click)="uploader.uploadAll()"
+                [disabled]="!uploader.getNotUploadedItems().length"
+              >
+                <span class="glyphicon glyphicon-upload"></span> Upload all
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning btn-s"
+                (click)="uploader.cancelAll()"
+                [disabled]="!uploader.isUploading"
+              >
+                <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-s"
+                (click)="uploader.clearQueue()"
+                [disabled]="!uploader.queue.length"
+              >
+                <span class="glyphicon glyphicon-trash"></span> Remove all
+              </button>
+            </div>
+          </div>
+        </div>
+      <div
+        mdbModal id="AddCategory"
+        #AddCategory="mdbModal"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myBasicModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close pull-right"
+                aria-label="Close"
+                (click)="AddCategory.hide()"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title w-100" id="myModalLabel">Add Category</h4>
+            </div>
+            <div class="modal-body">
+              <input
+                #categoryName
+                type="text"
+                class="form-control"
+                id="category"
+                name="category"
+                placeholder="Add Category"
+                required
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                mdbBtn
+                color="primary"
+                class="relative waves-light"
+                mdbWavesEffect
+                (click)="AddCategoryName(categoryName.value)"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        mdbModal
+        #AddSubCategory="mdbModal"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myBasicModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close pull-right"
+                aria-label="Close"
+                (click)="AddSubCategory.hide()"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title w-100" id="myModalLabel">Add SubCategory</h4>
+            </div>
+            <div class="modal-body">
+              <input
+                #subcategoryName
+                type="text"
+                class="form-control"
+                id="category"
+                name="category"
+                placeholder="Add Sub Category"
+                required
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                mdbBtn
+                color="primary"
+                class="relative waves-light"
+                mdbWavesEffect
+                (click)="
+                  AddSubCategoryName(subcategoryName.value, product.productCategory)
+                "
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+  </div>
+</div>

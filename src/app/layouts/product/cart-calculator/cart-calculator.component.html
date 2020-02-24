@@ -1,0 +1,20 @@
+<br>
+<div class="container" style="background-color:  #f3f3f3">
+  <div>
+      {{products.length}} Products in shopping cart<br><br>
+      Order Value: <span style="float:right;"><b>${{totalValue * .75}}</b></span><br>
+     Delivery fee:  <span style="float:right;"><b>$50</b></span>
+      <hr>
+
+
+    Total Amount: <span style="float:right;"><b>${{totalValue * 0.75 +50}}</b></span>
+  </div>
+  <br>
+  <div>
+    <button class="form-control" [routerLink]="['/checkouts']">Checkout</button>
+    <br>
+    <p style="font:small;text-align: center;color:blue;"><a  [routerLink]="['/products/all-products']" >Continue Shopping</a></p>
+  </div>
+  <br>
+
+</div>

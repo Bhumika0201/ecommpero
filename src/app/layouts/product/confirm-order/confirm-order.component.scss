@@ -1,0 +1,26 @@
+.deliverydetail{
+  width:100%;
+  background-color: rgb(243, 243, 243);
+  height:150px;
+}
+.item-pic{
+  width: 17%;
+}
+.item-content{
+  width: 64%
+}
+.item-price{
+  width: 11%;
+  float:right;
+}
+
+
+@media only screen and (max-width: 600px)
+{
+  .deliverydetail{
+    width:100%;
+    background-color: rgb(243, 243, 243);
+    height:350px;
+  }
+
+}

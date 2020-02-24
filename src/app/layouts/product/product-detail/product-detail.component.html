@@ -1,0 +1,59 @@
+<br>
+<div class="container">
+    <ngx-loading [show]="loading"
+    ></ngx-loading>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="product-image">
+        <div class="view hm-zoom" style="cursor: pointer">
+          <img [src]="url" [alt]="product.productName" class="displayImage">
+        </div>
+
+
+        <div class="" style="margin-top:15px">
+          <ul class="list-group mb-3">
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="product-detail">
+        <h3 class="product-head">{{product.productName}}</h3>
+        (Paperback)
+        <br>
+       <p style="font-size: small;">{{product.productDescription}}</p> <br>
+        <p style="  text-decoration: line-through; ">   ₹ {{product.productPrice}}</p>
+        <p style="   font-size: x-large;color: rgb(104, 14, 14);">   ₹ {{product.productPrice * 0.75}}</p>
+
+        <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+        Similar Books
+        <hr/>
+        <div *ngFor="let product of productList; let i = index">
+          <div class="row">
+            <div class="col-sm-4">
+              <img [src]="urllist[i]" style="width: 100px;padding: 10px;">
+            </div>
+            <div class="col-sm-8">
+                <a [routerLink]="['/products/product', product._id]">
+               <p style="font-size: small">
+                <b> {{product.productName}}</b> <br>
+                  by:{{product.productSeller}}</p>
+                <p >  <span style="  text-decoration: line-through; font-size: small;"> ₹ {{product.productPrice}}</span><br>
+                <span style="  text-decoration: none;  color: rgb(104, 14, 14);">   ₹ {{product.productPrice * 0.75}}</span></p>
+              </a> </div>
+
+          </div>
+
+
+        </div>
+    </div>
+  </div>
+</div>
+

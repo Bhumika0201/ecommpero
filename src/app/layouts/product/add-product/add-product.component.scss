@@ -1,0 +1,53 @@
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+.img-wrap {
+  position: relative;
+  display: inline-block;
+  border: 1px red solid;
+  font-size: 0;
+}
+.img-wrap .close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 100;
+  background-color: #FFF;
+  padding: 5px 2px 2px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: .2;
+  text-align: center;
+  font-size: 22px;
+  line-height: 10px;
+  border-radius: 50%;
+}
+.img-wrap:hover .close {
+  opacity: 1;
+}
+.setItem{
+  width:30%;
+}
+.setItem2{
+  width:70%;
+}
+p a{
+
+
+}
+p a:hover{
+  color: blue;
+}
+.container{
+  border: 1px #ddd solid;
+  width:70%;
+  min-height: 500px;
+
+}

@@ -1,0 +1,140 @@
+.sc-content{
+  width: 68%;
+
+}
+.sc-costcalc{
+  width:30%;
+  float:right;
+}
+.item-pic{
+  width: 17%;
+}
+.item-content{
+  width: 75%
+}
+.item-price{
+  width: 8%;
+  float:right;
+}
+img {
+  width:120px;height: 120px;
+}
+a p{
+  color: blue;
+}
+a p:hover{
+  color: rgb(202, 34, 34);
+  text-decoration: underline;
+}
+
+p a{
+  color: blue;
+  font-size: small;
+}
+p a:hover{
+  color:red;
+  text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .step__title{
+    padding: 0 15px;
+    font-size: 12px;
+  }
+  .step__title2{
+    padding: 0 15px;
+    font-size: 12px;
+  }
+
+
+  .sc-content{
+    width: 100%;
+  }
+  .sc-costcalc{
+    width:100%;
+  }
+  img {
+    width:72px;height: 72px;
+  }
+  .step__title:before,
+  .step__title:after {
+    content: "";
+    position: absolute;
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .step__title:before {
+    border-left: 0;
+    left: 0;
+  }
+  .step__title:after {
+    border-left:0;
+    right:0;
+  }
+
+}
+
+
+
+///
+
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.step {
+  width: 100%;
+}
+.step__title {
+  position: relative;
+  background-color: #43c6ac;
+  height: 40px;
+  width: 90%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: sans-serif;
+}
+.step__title:before,
+.step__title:after {
+  content: "";
+  position: absolute;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+.step__title:before {
+  border-left: 20px solid #fff;
+  left: 0;
+}
+.step__title:after {
+  border-left: 20px solid #43c6ac;
+  right: -20px;
+}
+//
+.step__title2 {
+  position: relative;
+  background-color:rgb(197, 190, 190);
+  height: 40px;
+  width: 90%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: sans-serif;
+}
+.step__title2:before,
+.step__title2:after {
+  content: "";
+  position: absolute;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+.step__title2:before {
+  border-left: 20px solid #fff;
+  left: 0;
+}
+.step__title2:after {
+  border-left: 20px solid  rgb(197, 190, 190);
+  right: -20px;
+}

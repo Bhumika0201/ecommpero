@@ -1,0 +1,67 @@
+<div class="container"  *ngIf="cartProducts.length > 0">
+  <br>
+
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__title" >
+                Shopping cart (Step 1 of 3)
+            </div>
+
+          </div>
+          <div class="step">
+            <div class="step__title2"  >
+                Delivery information (Step 2 of 3)
+            </div>
+
+          </div>
+          <div class="step">
+            <div class="step__title2">
+                Payment method (Step 3 of 3)
+
+            </div>
+
+          </div>
+        </div>
+
+<div class="row">
+    <div class="sc-content">
+      <br>
+        <h4>
+           <b>Your  shopping cart</b>
+        </h4>
+        <hr>
+        <div class="row container" *ngFor="let product of cartProducts let i = index">
+          <hr>
+          <div class="item-pic" ><img   style="padding: 10px;"[src]="urllist[i]"><br></div>
+
+          <div class="item-content">
+              <a [routerLink]="['/products/product', product._id]"><p><b>{{product.productDescription}}</b></p></a>
+            <p><a (click)="removeCartProduct(product)"><i class="far fa-trash-alt"></i>Delete|</a><a>Save for later</a></p></div>
+
+          <div class="item-price">
+              <p style="float: right; color: rgb(202, 34, 34)"><b>$ {{product.productPrice * .75}}</b></p>
+          </div>
+          <br>
+          <br>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="sc-costcalc ">
+<app-cart-calculator  [products]="cartProducts"></app-cart-calculator>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="cartProducts.length === 0">
+    <div class="container" *ngIf="cartProducts.length === 0">
+        <app-no-products-found [title]="messageTitle" [description]="messageDescription"></app-no-products-found>
+      </div>
+  </div>

@@ -1,0 +1,79 @@
+<div>
+    <h4
+    style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: black;float: right;"
+    >
+    <b>Shipping Confirmation<br>
+      Order #237487583275823
+    </b>
+    </h4>
+</div>
+
+<div>
+    <hr/><p>
+        Hello {{username}},<br>
+    Thank you for shopping with us .Your order is on it's way.
+    </p>
+
+</div>
+<div class="deliverydetail">
+  <div class="row">
+    <div class="col" >
+     <p style="color: rgb(124, 124, 124);padding:20px 20px 0px;
+
+     "> Your estimated delivery date is:</p>
+
+
+    </div>
+    <div class="col">
+        <p style="color: rgb(124, 124, 124);padding:20px 20px 1px;
+        "> Your order was sent to address:</p>
+        <p style="padding: 1px 20px 0px;"> {{address}}</p>
+
+
+    </div>
+  </div>
+
+</div>
+<div style="padding: 20px;">
+
+Depending on the ship speed you choose, it may take 24 hours for the tracking information to be available in your account.
+</div>
+
+<div>
+
+  <div class="orderSum">
+      <div style="padding: 20px;">
+        <h3
+          style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: black;"
+        >
+          <b>Shipment details</b>
+        </h3>
+        <div *ngFor="let product of cartProducts; let i = index">
+          <hr />
+          <div class="row" style="height:100px">
+            <div class="item-pic" ><img [src]="urllist[i]" width="50%" height="100px"/></div>
+            <div class="item-content">
+              <p>
+                <b style="text-transform: uppercase;">{{
+                  product.productName
+                }}</b
+                ><br />
+                {{ product.productCategory }}
+              </p>
+            </div>
+            <div class="item-price">
+              <p style="float: right; color: rgb(202, 34, 34)">
+                <b>$ {{ product.productPrice * 0.75 }}</b>
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <br />
+
+      </div>
+    </div>
+  </div>
+
+
